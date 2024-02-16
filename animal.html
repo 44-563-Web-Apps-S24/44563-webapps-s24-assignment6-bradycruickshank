@@ -39,5 +39,29 @@ function checkAnimal(){
 }
 </script>
 
+<div>
+    <img src="coke.png" height="150px" width="150px" onclick="selectImage()" id="drinkImage">
+</div>
+
+<script>
+    let useImage = 1
+    function selectImage(){
+        switch(useImage) {
+            case 1:
+                document.getElementById("drinkImage").setAttribute("src", "rootbeer.webp")
+                useImage += 1
+                break
+            case 2:
+                document.getElementById("drinkImage").setAttribute("src", "icedtea.webp")
+                useImage += 1
+                break
+            case 3:
+                document.getElementById("drinkImage").setAttribute("src", "coke.png")
+                useImage = 1
+                break
+        }
+    }
+</script>
+
 </body>
 </html> 
