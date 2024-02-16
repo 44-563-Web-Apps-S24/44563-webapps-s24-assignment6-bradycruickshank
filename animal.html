@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animal Game</title>
+</head>
+<body>
+
+<h2>Animal game by Brady Cruickshank</h2>
+
+<form>
+    <label for="form1_hidden">The hidden animal type </label>
+    <input type ="password" id="form1_hidden" name="form1_hidden" min=10 max=50 step=2 value="Chicken"> <br>
+
+    <label for="form1_guess">Guess the animal</label>
+    <input type ="text" id="form1_guess" name="form1_guess" autofocus> <br>
+
+    <input type="button" onclick="checkAnimal()" value="Check the guess">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+let wrong = 0
+let correct = 0
+
+function checkAnimal(){
+    animal = document.getElementById("form1_hidden").value
+    guess = document.getElementById("form1_guess").value
+    if (animal == guess) {
+        correct += 1
+        alert("ruff ruff")
+    }
+    else {
+        wrong += 1
+        alert("Grrrr")
+    }
+    document.getElementById("result").innerHTML = "Wrong: " + wrong + " Correct: " + correct
+}
+</script>
+
+</body>
+</html> 
