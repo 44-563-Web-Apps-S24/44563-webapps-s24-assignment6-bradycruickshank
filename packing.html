@@ -21,11 +21,20 @@
     <button type="button" onclick="selectPack()">Select for packing</button>
 </form>
 
+<form>
+    <input type="text" id="month" value="May">
+    <label for="month">Enter travel month</label> <br>
+
+    <input type="text" id="price">
+    <label for="price">Enter price</label> <br>
+
+    <button type="button" onclick="updatePack()">Update the pack</button>
+</form>
 
 <p id="result"></p>
 
 <script> 
-    my_pack = {}
+    let my_pack = {}
     function selectPack() {
         my_pack = {}
         if (document.getElementById("light").checked) {
@@ -52,6 +61,14 @@
             my_pack.tablet = "False"
         }
         
+        document.getElementById("result").innerHTML = my_pack
+    }
+
+    function updatePack() {
+        let month = document.getElementById("month").value
+        let price = document.getElementById("price").value
+        my_pack["month"] = month
+        my_pack["price"] = price
         document.getElementById("result").innerHTML = my_pack
     }
 </script>
