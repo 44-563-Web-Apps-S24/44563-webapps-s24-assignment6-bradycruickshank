@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Packing for a Trip</title>
+</head> 
+
+<body>
+
+<h2>Brady Cruickshank packs for a trip</h2>
+
+<form>
+    <input type="checkbox" id="light" value="True">
+    <label for="light">Pack light</label> <br>
+
+    <input type="checkbox" id="carryOn" value="True">
+    <label for="carryOn">Carry on</label> <br>
+
+    <input type="checkbox" id="tablet" value="False">
+    <label for="tablet">Tablet</label> <br>
+
+    <button type="button" onclick="selectPack()">Select for packing</button>
+</form>
+
+
+<p id="result"></p>
+
+<script> 
+    my_pack = {}
+    function selectPack() {
+        my_pack = {}
+        if (document.getElementById("light").checked) {
+            my_pack.light = "True"
+        }
+
+        else {
+            my_pack.light = "False"
+        }
+
+        if (document.getElementById("carryOn").checked) {
+            my_pack.carry = "True"
+        }
+
+        else {
+            my_pack.carry = "False"
+        }
+
+        if (document.getElementById("tablet").checked) {
+            my_pack.tablet = "True"
+        }
+
+        else {
+            my_pack.tablet = "False"
+        }
+        
+        document.getElementById("result").innerHTML = my_pack
+    }
+</script>
+
+</body>
+</html> 
