@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Discount Calculations</title>
+ </head>
+<body>
+
+<h2>Brady Cruicksank discount calculations</h2>
+
+<form>
+    <label for="price">Enter price per</label>
+    <input type="number" value="10" id="price" name="price"> <br>
+
+    <label for="numItems">Enter the number of items</label>
+    <input type="number" value="9" id="numItems" name="numItems"> <br>
+
+    <label for="percentDiscount">Enter the discount percent</label>
+    <input type="number" value="5" name="percentDiscount" id="percentDiscount"> <br>
+
+    <button type="button" onclick="discount()">Show Total</button>
+</form>
+
+
+<p id="result"></p>
+
+<script> 
+    function discount(){
+        let ppv = document.getElementById("price").value
+        let number = document.getElementById("numItems").value
+        let discount = document.getElementById("percentDiscount").value
+        let total
+        let myOutput = ""
+        let toShow = ""
+        for (let i = 0; i < 5; i++) {
+            total = (ppv * number) - ((ppv* number) * (discount / 100))
+            toShow = toShow + discount + "% is " + total + "; "
+            discount++
+        }
+        myOutput = "Totals are: " + toShow
+        document.getElementById("result").innerHTML = myOutput
+    }
+
+
+</script>
+
+</body>
+</html> 
