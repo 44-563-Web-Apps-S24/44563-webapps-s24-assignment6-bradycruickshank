@@ -20,8 +20,9 @@
     <button type="button" onclick="discount()">Show Total</button>
 </form>
 
-
 <p id="result"></p>
+
+
 
 <script> 
     function discount(){
@@ -39,8 +40,39 @@
         myOutput = "Totals are: " + toShow
         document.getElementById("result").innerHTML = myOutput
     }
+</script>
 
+<form>
+    <input type="radio" id="calc_sum" value="sum" name="calc" onclick="chooseOp()">
+    <label for="calc_sum">sum</label> <br>
 
+    <input type="radio" id="calc_mult" value="multiply" name="calc" onclick="chooseOp()">
+    <label for="calc_mult">mult</label> <br>
+
+    <input type="radio" id="calc_exp" value="exponent" name="calc" onclick="chooseOp()">
+    <label for="calc_exp">exp</label> <br>
+</form>
+
+<p id="calcResult"></p>
+
+<script>
+    function chooseOp() {
+        let price = document.getElementById("price").value
+        let discount = document.getElementById("percentDiscount").value
+        let total
+        if (document.getElementById("calc_sum").checked) {
+            total = Number(price) + Number(discount)
+            document.getElementById("calcResult").innerHTML = "Sum of " + price + " and " + discount + " is " + total
+        }
+        else if (document.getElementById("calc_mult").checked) {
+            total = price * discount
+            document.getElementById("calcResult").innerHTML = "Product of " + price + " and " + discount + " is " + total
+        }
+        else if (document.getElementById("calc_exp").checked) {
+            total = price ** discount
+            document.getElementById("calcResult").innerHTML = price + " to the power of " + discount + " is " + total
+        }
+    }
 </script>
 
 </body>
